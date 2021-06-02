@@ -1,0 +1,41 @@
+<%- include('./partials/head.ejs')  -%>
+
+
+
+<div class="content">
+    <h1>WELCOME TO LEO</h1>
+    <span>CONTINUE ></span>
+    <form id="details">
+        <label for="username"></label>
+        <input type="text" id="username" name="user">
+        <button type="submit">Register</button>
+    </form>
+     
+</div>
+
+
+<fieldset class="chat"><legend>Forum</legend>    
+    <span class="user-id"></span>
+    <span class="txt"></span>
+
+    <fieldset>
+        <input type="text" name="message" id="message">
+        <button onclick="sendMessage()">Send</button>
+    </fieldset>
+</fieldset>
+
+<div class="users"></div>
+
+<div class="p-chat">
+    <span id="userid"></span>
+    <span id="Ptxt"></span>
+
+    <fieldset>
+        <input type="text" name="user" id="toUser" placeholder="Receipient">
+        <input type="text" name="message" id="Pri-mess" placeholder="Your message">
+        <button onclick="sendPrivateMess()">Send</button>
+    </fieldset>
+</div>
+
+
+<%- include('./partials/footer.ejs')  -%>

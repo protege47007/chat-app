@@ -1,0 +1,27 @@
+{
+  "name": "leo",
+  "version": "1.0.0",
+  "description": "A real-time Chat Application.. using node.js, and socket.io..",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/protege47007/chat-app.git"
+  },
+  "author": "Adewumi David",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/protege47007/chat-app/issues"
+  },
+  "homepage": "https://github.com/protege47007/chat-app#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.12",
+    "socket.io": "^4.1.2"
+  }
+}
