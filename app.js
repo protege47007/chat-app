@@ -23,17 +23,6 @@ app.get('/', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 let collection = [];
 
 //creating http server for socket.io (not required in plain express..) 
@@ -77,7 +66,7 @@ io.on('connection', (socket) => {
 
     socket.on('newMessage', (data) => {
         socket.emit('receiveNewMessage', {msg: data, id: socket.id});
-
+    });
 
 });
 
