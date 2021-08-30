@@ -1,0 +1,87 @@
+
+<%- include ('./partials/header/head.ejs') -%> 
+
+<aside>
+    <header>
+        <h1>PROJECT <i style="color: tomato;">LEO</i></h1>
+        <!-- tools bar -->
+        <nav id="tools">
+            <span class="profile-pic">{[]}</span>
+            <label for="settings">
+                <span class="settings">{[]}</span>
+            </label>
+            <input type="checkbox" id="settings">
+            <span class="settings-tab">
+                <ul>
+                    <li>Profile</li>
+                    <li>Create a room</li>
+                    <li>Settings</li>
+                </ul>
+            </span>
+            <span class="logout">{[]}</span>
+        </nav>
+        <!-- contact search bar -->
+        <div id="search">
+            <button id="searchBtn">{[]}</button>
+            <input type="search" name="search" id="searchField" placeholder="Search">
+        </div>
+    </header>
+    <!-- contact card holder -->
+    <div class="users">
+        <div class="contact-tile">
+            <!-- contact profile img -->
+            <div class="contact-tile-img">{[]}</div>
+            <!-- contact properties {name, truncated latest message} -->
+            <div class="contact-prop">
+                <span class="contact-name">Lorem Ipsum Dolor</span>
+                <span class="info-preview">Sit amet consectetur adipisicing elit. Consectetur, iste?</span>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- main body section-->
+<div class="body-container">
+    <div class="contact-header">  
+        <!-- contact info section   -->
+        <div class="contact-segment">
+            <span class="contac-body-img">{[]}</span>
+            <span class="contact-body-name">Lorem ipsum dolor</span>
+        </div>
+        <!-- contact settings tab -->
+        <div class="body-tools">
+            <!-- search button for messages -->
+            <div id="search">
+                <button id="searchBtn">{[]}</button>
+                <input type="search" name="search" id="searchField" placeholder="Search">
+            </div>
+            <!-- settings drop-down menu -->
+            <label for="body-settings">
+                <span class="settings">{[]}</span>
+            </label>
+            <input type="checkbox" id="body-settings">
+            <span class="body-settings-tab">
+                <ul>
+                    <li>Contact info</li>
+                    <li>Clear messages</li>
+                    <li>Delete chat</li>
+                </ul>
+            </span>
+        </div>
+    </div>
+    <!-- chat section -->
+    <div class="p-chat">
+        <span id="userid"></span>
+        <span id="Ptxt"></span>
+    
+        
+    </div>
+
+    <!-- message composer tab -->
+    <div>
+        <input type="text" name="user" id="toUser" placeholder="Receipient">
+        <input type="text" name="message" id="Pri-mess" placeholder="Your message">
+        <button onclick="sendPrivateMess()">Send</button>
+    </div>
+</div>
+<%- include ('./partials/footer/footer.ejs') %> 

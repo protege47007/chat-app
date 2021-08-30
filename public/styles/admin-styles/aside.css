@@ -1,0 +1,153 @@
+aside{
+    height: 95vh;
+    
+}
+aside{
+    border-right: 1px solid #000;
+}
+#brand, #tools, .contact-prop, .contact-header{
+    border-bottom: 1px solid #000;
+}
+
+#brand{
+    height: 6vh;
+    padding: .5%;
+    font-size: 1.8rem;
+}
+
+
+#tools{
+    position: relative;
+    display: grid;
+    grid-template-columns: 20% 60% 10% 10% ;
+    grid-template-rows: 8vh;
+}
+
+.profile-pic, #search, .settings, .logout{
+    width: 100%;
+}
+.profile-pic, #tools>label, .setting, .logout{
+    cursor: pointer;
+}
+.profile-pic, .logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic{
+    background-color: bisque;
+}
+
+#settings{
+    display: none;
+    background-color: wheat;
+}
+#tools > label, .settings, .contact-settings > label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-settings > label{
+    width: 100%;
+    height: 100%;
+}
+.settings-tab{
+    visibility: hidden;
+    position: absolute;
+    right: 1%;
+    top: 90%;
+}
+#settings:checked + .settings-tab{
+    visibility: visible;
+}
+
+#settingsList{
+    list-style-type: none;
+    width: 9.5rem;
+    height: 7.5rem;
+    background-color: cadetblue;
+    padding: 10%;
+    box-shadow: 1px 2px 8px #000;
+}
+.setting{
+    font-size: 1.05rem;
+    padding: 3% 0%;
+}
+.setting:nth-child(3){
+    padding-bottom: 0;
+}
+
+
+.logout{
+    background-color: antiquewhite;
+}
+.logout > svg{
+    width: 60%;
+    height: 60%;
+}
+
+#search{
+    position: relative;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    align-items: center;
+}
+#searchField{
+    width: 95%;
+    height: 70%;
+    padding-left: 17%;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+#searchBtn{
+    position: absolute;
+    left: 2.5%;
+    width: 15%;
+    height: 70%;
+    opacity: .3;
+    cursor: pointer;
+    border: none;
+    border-right: 1px solid #000;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.users{
+    display: grid;
+    height: 81vh;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto-fit, 8vh);
+    overflow-y: auto;
+}
+
+.contact-tile{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.contact-tile-img{
+    background-color: bisque;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-prop{
+    padding: 1% 2% 1% 0;
+}
+.contact-name{
+    display: block;
+    font-size: 1.15rem;
+    padding: 1% 0;
+}
+.info-preview{
+    display: block;
+    height: 50%;
+    padding: 2% 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

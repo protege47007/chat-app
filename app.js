@@ -2,24 +2,64 @@
 const _ = require('lodash');
 const ejs = require('ejs');
 const express = require('express');
-const bp = require('body-parser');
 
 //calling express
 const app = express();
-
-
+const d = new Date(); const year = d.getFullYear();
+const codename = "Project Leo";
+let name;
+ 
 app.set('view engine', 'ejs')
 app.use(express.static('public'));
-app.use(bp.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 
 
-app.get('/', (req, res) => {
-    res.render('home', {title: "Project Leo"});
+app.route('/')
+.get ((req, res) => {
+    res.render('index', {title: codename, date: year});
+})
+
+.post((req, res)=>{
+    name = req.body.nom;
+    mail = req.body.mail;
+    res.redirect('/forum');
 });
 
+app.route('/forum')
+.get((req, res)=>{
+    // if user is logged in then enter
+
+    res.render('admin-room' , {//change to client room
+        title: codename,
+        date: year
+    });
+});
+
+app.route('/admin')
+.get((req, res)=>{
+    res.render('admin', {
+        title: codename,
+        date: year
+    });
+})
+.post((req, res)=>{
+    sudoName = req.body.nom;
+    sudoMail = req.body.mail;
+    sudoKey = req.body.password;
+
+    res.redirect('/')
+})
 
 
-
+// io.use((socket, next) => {
+//     let handshake = socket.handshake;
+//     // ...
+//   });
+  
+//   io.on("connection", (socket) => {
+//     let handshake = socket.handshake;
+//     // ...
+//   });
 
 
 
@@ -31,14 +71,17 @@ let server = require('http').createServer(app);
 //requiring the socket.io module; cors: {origin: '*'} is just incase there are some errors.
 let io = require('socket.io')(server, {cors: {origin: "*"}});
 
-//creating a listen port for the server
-server.listen(4040, () => {
-    console.log("SERVER is listening on port: 4040");
-});
+
 
 
 io.on('connection', (socket) => {
-  
+    let UserProfile = {
+        name: name,
+        id: socket.id
+    }
+    collection.push(UserProfile);
+
+
     socket.on('passingUser', (e) => {
         const profile = {
             nom: e,
@@ -71,3 +114,7 @@ io.on('connection', (socket) => {
 });
 
 
+//creating a listen port for the server
+server.listen(4040, () => {
+    console.log("SERVER is listening on port: 4040");
+});

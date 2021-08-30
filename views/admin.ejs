@@ -1,0 +1,15 @@
+<%- include('./partials/header/index-header.ejs')  -%>
+
+
+<div class="content">
+    <h1>PROJECT<br><i id="leo">LEO</i></h1>
+    <form id="details" method="POST" action="/">
+        <div class="input-cont">
+            <input type="text" id="username" name="nom" placeholder="Identify Yourself.." autocomplete="off" required>
+            <label for="username" id="label"></label>
+        </div>
+        <button id='btn'type="submit">Register</button>
+    </form>
+</div>
+
+<%- include('./partials/footer/index-footer.ejs')  -%>

@@ -1,0 +1,26 @@
+.message-column{
+    background-color: blueviolet;
+    min-height: 72vh;
+    height: 80vh;
+    max-height: 80vh;
+}
+.message-date{
+    background-color: greenyellow;
+    padding: 1%;
+    font-size: 1.2rem;
+}
+#composer{
+    background-color: fuchsia;
+    min-height: 8vh;
+    height: 8vh;
+    max-height: 16vh;
+}
+#privateText{
+    border: none;
+    width: 80%;
+    height: 85%;
+    padding: 3%;
+}
+#composer > button{
+    border: none;
+}

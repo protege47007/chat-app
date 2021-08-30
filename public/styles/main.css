@@ -1,18 +1,15 @@
-body {
-    margin: 0px;
-    padding: 0px;
+body{
+    align-items: flex-start;
 }
+
 .content-holder {
-    display: flex;
+    
     position: relative;
     max-width: 560px;
     height:720px;
-    background: url("leo.jpg");
-    background-position: center;
-    background-size: cover;
+    
     margin: auto;
-    align-items: center;
-    justify-content: center;
+    
 }
 .content-holder > h1 {
     font-family: "Agency FB";

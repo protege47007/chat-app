@@ -1,0 +1,153 @@
+.contact-header, .body-tools, .contact-segment{
+    width: 100%;
+    height: 7vh;
+}
+.contact-header{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.body-tools{
+    display: grid;
+    grid-template-columns: 85% 15%;
+}
+.contact-settings{
+    position: relative;
+}
+#body-settings{
+    display: none;
+}
+.body-settings-tab{
+    visibility: hidden;
+    position: absolute;
+}
+ #body-settings:checked + .body-settings-tab{
+    visibility: visible;
+}
+.body-settings-tab{
+    top: 6.8vh;
+    right: 5%;
+}
+.tab-list{
+    list-style-type: none;
+    width: 10rem;
+    height: 8rem;
+    background-color: cadetblue;
+    padding: 10%;
+    box-shadow: 1px 2px 8px #000;
+    border-radius: 2px;
+}
+.tab-list > li{
+    cursor: pointer;
+    padding: 5% 0;
+}
+.contact-settings{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#contactSearch{
+    display: grid;
+    grid-template-columns: 20% 65% 15%;
+    justify-items: center;
+    align-items: center;
+    background-color: crimson;
+    position: relative;
+}
+
+.contactSearchBtn{
+    border: none;
+    height: 80%;
+    width: 80%;
+    grid-column: 3/4;
+    cursor: pointer;
+}
+.contactSearchField{
+    display: none;
+}
+
+
+.contactSearchBtn1{
+    position: absolute;
+    width: 70%;
+    left: 10%;
+    border: none;
+    z-index: 1;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    grid-column: 1/2;
+    height: 75%;
+    opacity: .4;
+    border-right: 1px solid #000;
+    cursor: pointer;
+    animation-name: anim;
+    animation-duration: 3s;
+}
+.contactSearchField1{
+    display: block;
+    position: absolute;
+    width: 95%;
+    height: 75%;
+    border: none;
+    border-radius: 20px;
+    grid-column: 1/4;
+    padding-left: 15%;
+    animation-name: anims;
+    animation-duration: 1s;
+}
+.contactSearchField1:focus{
+    outline: none;
+}
+@keyframes anim {
+    from{
+        grid-column: 3/4;
+        z-index: 0;
+    }
+    to{
+        grid-column: 2/3;
+    }
+    to{
+        grid-column: 1/2;
+        z-index: 1;
+        opacity: .4;
+    }
+}
+@keyframes anims {
+    from{
+        right: 2.5%;
+        grid-column: 1/4;
+        width: 0%;
+        padding-left: 0%;
+    }
+    to{
+        right: 2.5%;
+        grid-column: 1/4;
+        width: 50%;
+    }
+    to{
+        right: 2.5%;
+        width: 95%; 
+        padding-left: 15%;
+        grid-column: 1/4;
+    }
+}
+
+
+.contact-segment{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.contact-body-img, .contact-body-name{
+    display: grid;
+    align-items: center;
+}
+.contact-body-img{
+    justify-items: center;
+    background-color: darkgoldenrod;
+}
+.contact-body-name{
+    justify-items: left;
+    padding: 0 0 0 2%;
+    background-color: darkgreen;
+}
+
