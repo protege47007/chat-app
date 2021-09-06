@@ -1,0 +1,115 @@
+
+.content{
+    width: 40%;
+    height: 90vh;
+    margin-top: .5%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 45% 15% 40%;
+    text-align: center;
+    border-radius: .5%;
+    box-shadow: #000 2px 5px 10px;
+    background-color: #fff;
+    background-size: 100% 50%;
+    background-position: center;
+    background-size: cover;
+    
+}
+.cat{
+    width: 50%;
+    height: 90%;
+}
+.content > h1{
+    font-size: 2rem;
+}
+h1{
+    margin: 2% 0;
+}
+#leo{
+    font-style: italic;
+    color: tomato;
+}
+
+
+form{
+    width: 100%;
+    height: 100%;
+}
+.input-cont{
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.email-input, .pass{
+    width: 80%;
+    height: 40%;
+    position: relative;
+    overflow: hidden;
+}
+#username, .label, #password, .label-p{
+    width: 100%;
+    height: 100%;
+}
+#username, #password{
+    padding: 5% 3% 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border: none;
+    text-align: center;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+}
+.label, .label-p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    border-bottom: 5px solid #fff;
+}
+.label::after, .label-p::after{
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    bottom: -1;
+    left: 0;
+    border-bottom: 5px solid tomato;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+#username:focus + .label::after, #password:focus + .label-p::after {
+    transform: translateX(0%);
+} 
+
+
+
+.btn{
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    padding: 1.5%;
+    background: -webkit-linear-gradient(left top,  #ff9800a1, #ff6347de);
+    border: #000 1px solid;
+    cursor: pointer;
+}
+.Register{
+    margin-right: 1%;
+    color: #fff;
+}
+.login{
+    margin-left: 1%;
+    color: #000;
+}
+form > a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    opacity: .7;
+}

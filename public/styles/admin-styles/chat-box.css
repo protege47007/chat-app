@@ -50,14 +50,14 @@
     background-color: fuchsia;
     width: 100%;
     min-height: 8vh;
-    max-height: 16vh;
-    
+    max-height: 18vh;
+    padding: 1% 0;
 }
 #message[contenteditable]{
     width: 80%;
     min-height: 6vh;
-    max-height: 14vh;
-    padding: 1.3% 3% 1%;
+    max-height: 17vh;
+    padding: 1.3% 3% 1.3%;
     border-radius: 20px;
     overflow: auto;
     overflow-y: auto;

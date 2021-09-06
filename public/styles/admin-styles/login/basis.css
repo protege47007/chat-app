@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #dcdcdc;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+footer{
+    margin: 1% 0;
+    height: 3vh;
+    opacity: .6;
+}
+footer:hover{
+    opacity: 1;
+}

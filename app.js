@@ -1,6 +1,8 @@
 //node modules initialisation
+require('dotenv').config()
 const _ = require('lodash');
 const ejs = require('ejs');
+const mongoose = require('mongoose');
 const express = require('express');
 
 //calling express
@@ -8,15 +10,44 @@ const app = express();
 const d = new Date(); const year = d.getFullYear();
 const codename = "Project Leo";
 let name;
- 
+
+
+mongoose.connect('mongodb://localhost:27017/leoDb',  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+});
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 
+//schemas declaration
+const userSchema = new mongoose.Schema({
+    email: String,
+    password: String
+});
 
+const User = mongoose.model('User', userSchema);
+
+const sudoUserSchema = new mongoose.Schema({
+    email: String,
+    password: String
+});
+
+const SudoUser = mongoose.model('SudoUser', sudoUserSchema);
+
+const alpha = new SudoUser({
+    email: '1@2.com',
+    password: '12345'
+});
+
+//alpha.save();
+
+
+//routes
 app.route('/')
 .get ((req, res) => {
-    res.render('index', {title: codename, date: year});
+    res.render('login/index', {title: codename, date: year});
 })
 
 .post((req, res)=>{
@@ -29,7 +60,7 @@ app.route('/forum')
 .get((req, res)=>{
     // if user is logged in then enter
 
-    res.render('admin-room' , {//change to client room
+    res.render('main/admin-room' , {//change to client room
         title: codename,
         date: year
     });
@@ -37,19 +68,24 @@ app.route('/forum')
 
 app.route('/admin')
 .get((req, res)=>{
-    res.render('admin', {
+    res.render('login/admin', {
         title: codename,
         date: year
     });
 })
 .post((req, res)=>{
-    sudoName = req.body.nom;
     sudoMail = req.body.mail;
     sudoKey = req.body.password;
 
     res.redirect('/')
 })
 
+app.get('/client', (req, res) =>{
+    res.render('main/c-room',{
+        title: codename,
+        date: year
+    });
+});
 
 // io.use((socket, next) => {
 //     let handshake = socket.handshake;
