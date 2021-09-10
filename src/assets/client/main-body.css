@@ -1,0 +1,254 @@
+.body-container{
+    display: grid;
+    grid-template-rows: 7vh 88vh;
+}
+.contact-header, .body-tools, .contact-segment{
+    width: 100%;
+    height: 7vh;
+}
+.contact-header{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.body-tools{
+    display: grid;
+    grid-template-columns: 85% 15%;
+}
+#o-l{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.contact-settings{
+    position: relative;;
+}
+#body-settings{
+    display: none;
+}
+.body-settings-tab{
+    visibility: hidden;
+    position: absolute;
+}
+ #body-settings:checked + .body-settings-tab{
+    visibility: visible;
+}
+.body-settings-tab{
+    top: 6.8vh;
+    right: 5%;
+}
+.tab-list{
+    list-style-type: none;
+    width: 10rem;
+    height: 8rem;
+    background-color: cadetblue;
+    padding: 10%;
+    box-shadow: 1px 2px 8px #000;
+    border-radius: 2px;
+}
+.tab-list > li{
+    cursor: pointer;
+    padding: 5% 0;
+}
+.contact-settings{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+#contactSearch{
+    display: grid;
+    grid-template-columns: 20% 65% 15%;
+    justify-items: center;
+    align-items: center;
+    background-color: crimson;
+    position: relative;
+}
+
+.contactSearchBtn{
+    border: none;
+    height: 80%;
+    width: 80%;
+    grid-column: 3/4;
+    cursor: pointer;
+}
+.contactSearchField{
+    display: none;
+}
+
+
+.contactSearchBtn1{
+    position: absolute;
+    width: 70%;
+    left: 10%;
+    border: none;
+    z-index: 1;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    grid-column: 1/2;
+    height: 75%;
+    opacity: .4;
+    border-right: 1px solid #000;
+    cursor: pointer;
+    animation-name: anim;
+    animation-duration: 3s;
+}
+.contactSearchField1{
+    display: block;
+    position: absolute;
+    width: 95%;
+    height: 75%;
+    border: none;
+    border-radius: 20px;
+    grid-column: 1/4;
+    padding-left: 15%;
+    animation-name: anims;
+    animation-duration: 1s;
+}
+.contactSearchField1:focus{
+    outline: none;
+}
+@keyframes anim {
+    from{
+        grid-column: 3/4;
+        z-index: 0;
+    }
+    to{
+        grid-column: 2/3;
+    }
+    to{
+        grid-column: 1/2;
+        z-index: 1;
+        opacity: .4;
+    }
+}
+@keyframes anims {
+    from{
+        right: 2.5%;
+        grid-column: 1/4;
+        width: 0%;
+        padding-left: 0%;
+    }
+    to{
+        right: 2.5%;
+        grid-column: 1/4;
+        width: 50%;
+    }
+    to{
+        right: 2.5%;
+        width: 95%; 
+        padding-left: 15%;
+        grid-column: 1/4;
+    }
+}
+
+
+.contact-segment{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.contact-body-img, .contact-body-name{
+    display: grid;
+    align-items: center;
+}
+.contact-body-img{
+    justify-items: center;
+    background-color: darkgoldenrod;
+}
+.contact-body-name{
+    justify-items: left;
+    padding: 0 0 0 2%;
+    background-color: darkgreen;
+}
+
+
+
+
+#messageBox{
+    position: relative;
+}
+.message-column{
+    background-color: blueviolet;
+    max-height: 80vh;
+    height: 100%;
+    min-height: 62vh;
+    padding: .5%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.message-date{
+    background-color: greenyellow;
+    padding: .2% 1%;
+    font-size: .9rem;
+    align-self: center;
+    justify-self: center;
+    border-radius: 3px;
+    z-index: 1;
+}
+.contact-message-body{
+    background-color: indianred;
+    word-wrap: break-word;
+    word-spacing: -.1rem;
+    max-width: 45%;
+    max-height: 30%;
+    padding: 1%;
+    border-radius: 3px;
+    margin-bottom: 1%;
+}
+.self{
+    background-color: lawngreen;
+    align-self: flex-end;
+}
+.message-time-stamp{
+    display: block;
+    font-size: .8rem;
+    line-height: .9rem;
+    text-align: right;
+}
+#composer{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: fuchsia;
+    width: 100%;
+    min-height: 8vh;
+    max-height: 20vh;
+    padding: 1%;
+}
+#message[contenteditable]{
+    width: 80%;
+    min-height: 6vh;
+    max-height: 16vh;
+    padding: 1.3% 3% 1%;
+    border-radius: 20px;
+    overflow-y: auto;
+    background-color: lemonchiffon;
+    color: #000;
+    cursor: text;
+    outline: none;
+}
+#message[contenteditable]:empty::before {
+    content: "Type a message";
+    color: gray;
+}
+#sendBtn{
+    border: none;
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+    padding: 1%;
+    width: 7%;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+#sendBtn > svg {
+    width: 100%;
+    height: 100%;
+}
+
